@@ -11,3 +11,6 @@ class ShoesSpider(scrapy.Spider):
         for page in range(start_page, end_page + 1):
             url = base_url.format(page)
             yield scrapy.Request(url, callback=self.parse)
+
+    #to handle the HTTP response
+    def parse(self, response):
