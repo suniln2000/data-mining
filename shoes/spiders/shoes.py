@@ -6,7 +6,7 @@ class ShoesSpider(scrapy.Spider):
     def start_requests(self):
         base_url = 'https://www.mytheresa.com/int/en/men/shoes?page={}'
         start_page = 1
-        end_page = 3
+        end_page = 33
 
         for page in range(start_page, end_page + 1):
             url = base_url.format(page)
