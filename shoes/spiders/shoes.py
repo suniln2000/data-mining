@@ -20,3 +20,5 @@ class ShoesSpider(scrapy.Spider):
         #extracts the URL of each shoe's product page
         for shoe in shoes:
             product_url = shoe.css('a.item__link::attr(href)').get()
+            #after following the link, it handle the new response.
+            yield response.follow(product_url, callback=self.parse_shoe_page)
