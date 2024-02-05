@@ -14,3 +14,5 @@ class ShoesSpider(scrapy.Spider):
 
     #to handle the HTTP response
     def parse(self, response):
+        # represent individual shoes on the webpage
+        shoes = response.css('.item--sale')
