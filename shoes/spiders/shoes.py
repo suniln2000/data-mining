@@ -16,3 +16,7 @@ class ShoesSpider(scrapy.Spider):
     def parse(self, response):
         # represent individual shoes on the webpage
         shoes = response.css('.item--sale')
+
+        #extracts the URL of each shoe's product page
+        for shoe in shoes:
+            product_url = shoe.css('a.item__link::attr(href)').get()
